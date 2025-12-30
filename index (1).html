@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Luna ❤️</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-image: url("image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* طبقة غامقة خفيفة */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+}
+
+/* مكان الباسورد */
+.login {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  text-align: center;
+}
+
+input {
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  width: 220px;
+  text-align: center;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 25px;
+  border-radius: 20px;
+  border: none;
+  background: #ff5fa2;
+  color: white;
+  font-size: 15px;
+}
+
+/* الرسالة */
+.message {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  color: #ffd1e8;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.message p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+iframe {
+  border-radius: 15px;
+}
+</style>
+</head>
+
+<body onclick="showLogin()">
+
+<div class="overlay"></div>
+
+<div class="login" id="login">
+  <input type="password" id="password" placeholder="الباسورد">
+  <br>
+  <button onclick="check(event)">دخول</button>
+</div>
+
+<div class="message" id="message">
+  <h2>Luna ❤️</h2>
+  <p>
+    في وسط الناس وفي عز انشغالي والضجيج<br>
+    الذي يحيط بي وكل شيء من حولي<br>
+    افكرُ بكِ وحدك<br>
+    واحنُ اليكِ وحدك<br>
+    واحبكِ وحدك...
+  </p>
+
+  <iframe width="100%" height="220"
+    src="https://www.youtube.com/embed/G4VMiIbTfL0?autoplay=1"
+    allow="autoplay"
+    frameborder="0">
+  </iframe>
+</div>
+
+<script>
+function showLogin(){
+  document.getElementById("login").style.display = "block";
+}
+
+function check(e){
+  e.stopPropagation();
+  const pass = document.getElementById("password").value;
+  if(pass === "28/1"){
+    document.getElementById("login").style.display = "none";
+    document.getElementById("message").style.display = "block";
+  } else {
+    alert("الباسورد غلط 😅");
+  }
+}
+</script>
+
+</body>
+</html>
